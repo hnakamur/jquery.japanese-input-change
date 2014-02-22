@@ -26,6 +26,8 @@
 <script src="jquery.japanese-input-change.js"></script>
 <script>
 $(function() {
+  $("input[type=text],textarea").japaneseInputChange(500, doSomeWork);
+
   function doSomeWork(e) {
     log("Do some work with text: " + $(e.target).val());
   }
@@ -35,10 +37,6 @@ $(function() {
     el.text(el.text() + message + "\r");
     el.scrollTop(el[0].scrollHeight - el.height());
   }
-
-  $("input[type=text],textarea").each(function() {
-    $(this).japaneseInputChange(500, doSomeWork);
-  });
 });
 </script>
 </body>

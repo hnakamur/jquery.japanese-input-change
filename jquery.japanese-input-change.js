@@ -5,31 +5,32 @@
  */
 (function($, undefined) {
   $.fn.japaneseInputChange = function(delay, handler) {
-    var el = this,
-        readyToSetTimer = true,
+    var readyToSetTimer = true,
         isFirefox = navigator.userAgent.indexOf('Firefox') != -1,
         oldVal,
-        timer;
+        timer,
+        callHandler = function(e) {
+          var $el = $(e.target), val = $el.val();
+          if (val != oldVal) {
+            handler.call($el, e);
+            oldVal = val;
+          }
+        },
+        clearTimer = function() {
+          if (timer !== undefined) {
+            clearTimeout(timer);
+            timer = undefined;
+          }
+        };
 
-    function callHandler(context, e) {
-      val = el.val();
-      if (val != oldVal) {
-        handler.call(context, e);
-        oldVal = val;
-      }
-    }
-
-    el.focus(function() {
-      oldVal = el.val();
+    this.focus(function(e) {
+      oldVal = $(e.target).val();
+      readyToSetTimer = true;
     }).blur(function(e) {
-      callHandler(this, e);
+      clearTimer();
+      callHandler(e);
     }).keyup(function(e) {
-      var context = this, val;
-
-      if (timer !== undefined) {
-        clearTimeout(timer);
-        timer = undefined;
-      }
+      clearTimer();
 
       // When Enter is pressed, IME commits text.
       if (e.which == 13 || isFirefox) {
@@ -45,7 +46,7 @@
           // 3. The user presses keys and IME has some uncommitted text.
           //    before timer fires.
           if (readyToSetTimer) {
-            callHandler(context, e);
+            callHandler(e);
           }
         }, delay);
       }
