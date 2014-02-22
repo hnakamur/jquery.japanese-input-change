@@ -81,9 +81,9 @@
       delay = selector;
       selector = null;
     }
-    this.on('focus', selector, onFocus)
-        .on('blur', selector, onBlur)
-        .on('keyup', selector, onKeyup)
-        .on('keydown', selector, onKeydown);
+    return this.on('focus', selector, onFocus)
+      .on('blur', selector, onBlur)
+      .on('keyup', selector, onKeyup)
+      .on('keydown', selector, onKeydown);
   };
 }(jQuery));
