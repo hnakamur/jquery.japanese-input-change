@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Japanese input change plugin example</title>
+</head>
+<body>
+<div>
+<label>Input text with IME on:</label>
+<input type="text" id="text1"></input>
+<p>A log will be appended at 500ms after both of these conditions met.</p>
+<ul>
+<li>key inputs becomes idle.</li>
+<li>IME does not have uncommitted text.</li>
+</ul>
+</div>
+<div>
+<div>
+<label>log:</label>
+</div>
+<div>
+<textarea rows="10" cols="40" id="log"></textarea>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="jquery.japanese-input-change.js"></script>
+<script>
+$(function() {
+  $("body").japaneseInputChange("input[type=text],textarea", 500, doSomeWork);
+  $("#text1").after('<br><textarea rows="10" cols="40" id="text2">');
+
+  function doSomeWork(e) {
+    log("Do some work with text: " + $(e.target).val());
+  }
+
+  function log(message) {
+    var el = $("#log");
+    el.text(el.text() + message + "\r");
+    el.scrollTop(el[0].scrollHeight - el.height());
+  }
+});
+</script>
+</body>
+</html>
