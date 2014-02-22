@@ -1,0 +1,30 @@
+{
+  "name": "jquery.japanese-input-change",
+  "version": "0.2.0",
+  "description": "a jQuery plugin which calls a handler function when texts inputted with Japanese IME change",
+  "main": "jquery.japanese-input-change.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hnakamur/jquery.japanese-input-change"
+  },
+  "keywords": [
+    "jquery",
+    "japanse",
+    "ime",
+    "input",
+    "change"
+  ],
+  "author": "Hiroaki Nakamura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hnakamur/jquery.japanese-input-change/issues"
+  },
+  "homepage": "https://github.com/hnakamur/jquery.japanese-input-change",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
