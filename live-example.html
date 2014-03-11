@@ -25,7 +25,7 @@
 <script src="jquery.japanese-input-change.js"></script>
 <script>
 $(function() {
-  $("body").japaneseInputChange("input[type=text],textarea", 500, doSomeWork);
+  $("body").japaneseInputChange("input[type=text],textarea", doSomeWork);
   $("#text1").after('<br><textarea rows="10" cols="40" id="text2">');
 
   function doSomeWork(e) {

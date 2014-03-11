@@ -26,7 +26,7 @@
 <script src="jquery.japanese-input-change.js"></script>
 <script>
 $(function() {
-  $("input[type=text],textarea").japaneseInputChange(500, doSomeWork);
+  $("input[type=text],textarea").japaneseInputChange(doSomeWork);
 
   function doSomeWork(e) {
     log("Do some work with text: " + $(e.target).val());
