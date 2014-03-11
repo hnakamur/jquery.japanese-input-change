@@ -25,3 +25,4 @@ created after the function call too.  Internally jQuery
 
 * [a basic example](http://hnakamur.github.io/jquery.japanese-input-change/example.html)
 * [a live event example](http://hnakamur.github.io/jquery.japanese-input-change/live-example.html)
+* [SlickGrid filtering example](http://hnakamur.github.io/slickgrid_example/)
