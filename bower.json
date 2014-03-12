@@ -1,0 +1,21 @@
+{
+  "name": "jquery.japanese-input-change",
+  "main": "jquery.japanese-input-change.js",
+  "version": "0.3.1",
+  "homepage": "https://github.com/hnakamur/jquery.japanese-input-change",
+  "authors": [
+    "Hiroaki Nakamura <hnakamur@gmail.com>"
+  ],
+  "description": "a jQuery plugin which calls a handler function when texts inputted with Japanese IME change",
+  "keywords": [
+    "Japanese"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
