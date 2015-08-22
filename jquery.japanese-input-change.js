@@ -6,14 +6,7 @@
 (function($, undefined) {
   $.fn.japaneseInputChange = function(selector, handler) {
     var isComposing,
-      oldVal,
-      callHandler = function(e) {
-        var $el = $(e.target), val = $el.val();
-        if (val != oldVal) {
-          handler.call($el, e);
-          oldVal = val;
-        }
-      };
+        oldVal;
 
     if (handler === undefined) {
       handler = selector;
@@ -23,9 +16,6 @@
     return this.on('focus', selector, function(e) {
       oldVal = $(e.target).val();
     })
-    .on('blur', selector, function(e) {
-      callHandler(e);
-    })
     .on('compositionstart', selector, function(e) {
       isComposing = true;
     })
@@ -34,7 +24,12 @@
     })
     .on('input', selector, function(e) {
       if (!isComposing) {
-        callHandler(e);
+        var $el = $(e.target),
+            val = $el.val();
+        if (val !== oldVal) {
+          handler.call($el, e);
+          oldVal = val;
+        }
       }
     });
   };
