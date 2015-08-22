@@ -1,6 +1,6 @@
 {
   "name": "jquery.japanese-input-change",
-  "version": "0.3.1",
+  "version": "0.5.0",
   "description": "a jQuery plugin which calls a handler function when texts inputted with Japanese IME change",
   "main": "jquery.japanese-input-change.js",
   "scripts": {

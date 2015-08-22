@@ -6,20 +6,24 @@ a jQuery plugin which calls a handler function when texts inputted with Japanese
 ## API
 
 ```
-$(selector).japaneseInputChange(delay, handler)
+$(selector).japaneseInputChange(handler)
 ```
 
-The handler is called after delay when input key events become idle and the
-text value is changed from the original value.
+The handler is called when the text value is changed from the original value.
 During the IME has uncommitted text, the handler will not be called.
 
 ```
-$(context).japaneseInputChange(selector, delay, handler)
+$(context).japaneseInputChange(selector, handler)
 ```
 
 With this version, the handler is called for selector matching elements
 created after the function call too.  Internally jQuery
 ```.on(events, selector, handler)``` is used.
+
+## Supported browsers
+
+IE10+, Firefox, Chrome, Safari.
+Browsers with support of `focus`, `blur`, `compositionstart`, `compositionend`, and `input` events.
 
 ## examples
 

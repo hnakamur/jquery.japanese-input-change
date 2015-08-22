@@ -1,7 +1,7 @@
 {
   "name": "jquery.japanese-input-change",
   "main": "jquery.japanese-input-change.js",
-  "version": "0.3.1",
+  "version": "0.5.0",
   "homepage": "https://github.com/hnakamur/jquery.japanese-input-change",
   "authors": [
     "Hiroaki Nakamura <hnakamur@gmail.com>"
